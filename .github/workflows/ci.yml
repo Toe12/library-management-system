@@ -1,0 +1,24 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - main # Add other branches here if needed
+
+jobs:
+
+  checkout:
+    name: Checkout & checks
+    runs-on: ubuntu-latest
+      - name: Checkout GH repo
+        uses: actions/checkout@v4.1.1
+      - name: Checkout code
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'maven'
+      - name: Build with Maven
+        run: |
+          cd ${{ github.workspace }}/library-management-system
+          mvn clean
+          mvn package -Dgithub.workspace=${{ github.workspace }} -DskipTests=true
