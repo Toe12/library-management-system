@@ -1,7 +1,7 @@
 package com.librarymanagementsystem.repositories;
 
-import com.librarymanagementsystem.models.BorrowStatus;
-import com.librarymanagementsystem.models.BorrowingRecord;
+import com.librarymanagementsystem.entities.BorrowStatus;
+import com.librarymanagementsystem.entities.BorrowingRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

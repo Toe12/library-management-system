@@ -1,8 +1,8 @@
 package com.librarymanagementsystem.integrationtests;
 
-import com.librarymanagementsystem.payload.BookDto;
-import com.librarymanagementsystem.payload.BorrowingRecordDto;
-import com.librarymanagementsystem.payload.PatronDto;
+import com.librarymanagementsystem.payloads.BookDto;
+import com.librarymanagementsystem.payloads.BorrowingRecordDto;
+import com.librarymanagementsystem.payloads.PatronDto;
 
 import java.time.LocalDate;
 import java.util.UUID;

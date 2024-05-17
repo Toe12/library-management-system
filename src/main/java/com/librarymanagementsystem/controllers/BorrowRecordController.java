@@ -1,7 +1,7 @@
 package com.librarymanagementsystem.controllers;
 
-import com.librarymanagementsystem.payload.BorrowingRecordDto;
-import com.librarymanagementsystem.services.BorrowingRecordService;
+import com.librarymanagementsystem.payloads.BorrowingRecordDto;
+import com.librarymanagementsystem.services.borrowingrecord.BorrowingRecordService;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

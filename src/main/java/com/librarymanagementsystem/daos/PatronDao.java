@@ -1,6 +1,6 @@
-package com.librarymanagementsystem.dao;
+package com.librarymanagementsystem.daos;
 
-import com.librarymanagementsystem.models.Patron;
+import com.librarymanagementsystem.entities.Patron;
 import com.librarymanagementsystem.repositories.PatronRepository;
 import org.springframework.stereotype.Component;
 

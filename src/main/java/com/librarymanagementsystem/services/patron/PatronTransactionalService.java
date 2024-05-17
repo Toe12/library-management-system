@@ -1,6 +1,6 @@
-package com.librarymanagementsystem.services;
+package com.librarymanagementsystem.services.patron;
 
-import com.librarymanagementsystem.models.Patron;
+import com.librarymanagementsystem.entities.Patron;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;

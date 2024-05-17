@@ -1,8 +1,8 @@
-package com.librarymanagementsystem.dao;
+package com.librarymanagementsystem.daos;
 
 import com.librarymanagementsystem.exceptionhandlers.borrowrecord.BorrowingRecordException;
-import com.librarymanagementsystem.models.BorrowStatus;
-import com.librarymanagementsystem.models.BorrowingRecord;
+import com.librarymanagementsystem.entities.BorrowStatus;
+import com.librarymanagementsystem.entities.BorrowingRecord;
 import com.librarymanagementsystem.repositories.BorrowingRecordRepository;
 import org.springframework.stereotype.Component;
 

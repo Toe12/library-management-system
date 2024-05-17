@@ -1,4 +1,4 @@
-package com.librarymanagementsystem.payload;
+package com.librarymanagementsystem.payloads;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

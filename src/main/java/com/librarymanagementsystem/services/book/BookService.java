@@ -1,10 +1,10 @@
-package com.librarymanagementsystem.services;
+package com.librarymanagementsystem.services.book;
 
-import com.librarymanagementsystem.dao.BookDao;
+import com.librarymanagementsystem.daos.BookDao;
 import com.librarymanagementsystem.exceptionhandlers.book.BookException;
 import com.librarymanagementsystem.exceptionhandlers.book.BookNotFoundException;
-import com.librarymanagementsystem.models.Book;
-import com.librarymanagementsystem.payload.BookDto;
+import com.librarymanagementsystem.entities.Book;
+import com.librarymanagementsystem.payloads.BookDto;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.cache.annotation.CacheEvict;

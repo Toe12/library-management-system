@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "513ab4c3-772c-4fc2-968d-3872ac95c034",
+		"name": "library-system-managment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19137654"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Retrieve All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/books/retrieveAll",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"retrieveAll"
+							]
+						},
+						"description": "Retrieves a list of all books in the library."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Book Title v4\",\n    \"authorFirstName\": \"firstName\", \n    \"authorLastName\": \"lastName\",\n    \"isbn\": \"978-1-6112-2991-4\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/books/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"create"
+							]
+						},
+						"description": "Creates a new book record in the library."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve by Book ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/books/retrieve/b98087d1-fc58-4a62-974f-ffde132777aa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"retrieve",
+								"b98087d1-fc58-4a62-974f-ffde132777aa"
+							]
+						},
+						"description": "Retrieves details of a specific book by its ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookId\": \"b4c178de-1fb9-4269-b71d-093a0634ba89\",\n    \"title\": \"Book Title v3.0\",\n    \"authorFirstName\": \"Toe\",\n    \"authorLastName\": \"Arkar\",\n    \"isbn\": \"978-1-6112-2991-3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/books/update/b4c178de-1fb9-4269-b71d-093a0634ba89",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"update",
+								"b4c178de-1fb9-4269-b71d-093a0634ba89"
+							]
+						},
+						"description": "Updates details of an existing book."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/books/delete/b98087d1-fc58-4a62-974f-ffde132777aa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"delete",
+								"b98087d1-fc58-4a62-974f-ffde132777aa"
+							]
+						},
+						"description": "Deletes a book record by its ID."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing books in the library."
+		},
+		{
+			"name": "Patron",
+			"item": [
+				{
+					"name": "Create Patron",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"Toe\",\n    \"lastName\": \"Arkar\",\n    \"phoneNumber\" : \"3145454566\",\n    \"email\": \"toearkar.15@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/patrons/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"patrons",
+								"create"
+							]
+						},
+						"description": "Creates a new patron record."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Patron ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/patrons/delete/88f1e996-8a98-436e-8626-022c65f1c35f",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"patrons",
+								"delete",
+								"88f1e996-8a98-436e-8626-022c65f1c35f"
+							]
+						},
+						"description": "Deletes a patron record by its ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Patrons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/patrons/retrieveAll",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"patrons",
+								"retrieveAll"
+							]
+						},
+						"description": "Retrieves a list of all patrons."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve by Patron ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/patrons/retrieve/88f1e996-8a98-436e-8626-022c65f1c35e",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"patrons",
+								"retrieve",
+								"88f1e996-8a98-436e-8626-022c65f1c35e"
+							]
+						},
+						"description": "Retrieves details of a specific patron by their ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Patron",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"patronId\": \"301b9d17-bede-40cc-abcc-997ff50e3196\",\n    \"firstName\": \"Toe\",\n    \"lastName\": \"Arkar\",\n    \"phoneNumber\": \"3145454578\",\n    \"email\": \"toearkar.15@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/patrons/update/301b9d17-bede-40cc-abcc-997ff50e3196",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"patrons",
+								"update",
+								"301b9d17-bede-40cc-abcc-997ff50e3196"
+							]
+						},
+						"description": "Updates details of an existing patron."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing patrons of the library."
+		},
+		{
+			"name": "Borrowing Records",
+			"item": [
+				{
+					"name": "Patron Borrow Books",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/borrow/b98087d1-fc58-4a62-974f-ffde132777aa/patron/301b9d17-bede-40cc-abcc-997ff50e3196",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"borrow",
+								"b98087d1-fc58-4a62-974f-ffde132777aa",
+								"patron",
+								"301b9d17-bede-40cc-abcc-997ff50e3196"
+							]
+						},
+						"description": "Records the borrowing of a book by a patron."
+					},
+					"response": []
+				},
+				{
+					"name": "Return Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/return/b98087d1-fc58-4a62-974f-ffde132777aa/patron/ac54ca5e-802a-49fc-9128-6b68c3306a30",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"return",
+								"b98087d1-fc58-4a62-974f-ffde132777aa",
+								"patron",
+								"ac54ca5e-802a-49fc-9128-6b68c3306a30"
+							]
+						},
+						"description": "Records the return of a book by a patron."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing borrowing records."
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8080"
+		}
+	]
+}
