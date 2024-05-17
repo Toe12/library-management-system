@@ -1,9 +1,9 @@
-package com.librarymanagementsystem.services;
+package com.librarymanagementsystem.services.patron;
 
-import com.librarymanagementsystem.dao.PatronDao;
+import com.librarymanagementsystem.daos.PatronDao;
 import com.librarymanagementsystem.exceptionhandlers.book.BookNotFoundException;
-import com.librarymanagementsystem.models.Patron;
-import com.librarymanagementsystem.payload.PatronDto;
+import com.librarymanagementsystem.entities.Patron;
+import com.librarymanagementsystem.payloads.PatronDto;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.cache.annotation.CacheEvict;

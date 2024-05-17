@@ -4,10 +4,11 @@
 - http://localhost:8080
 
 ## Database setup
-- Please refer to the [dockerized_mysql_db_setup.md](db_docker_script%2Fdockerized_mysql_db_setup.md), for MySQL database setup.
+- Please refer to [db_docker_script](db_docker_script) and [dockerized_mysql_db_setup.md](db_docker_script%2Fdockerized_mysql_db_setup.md), for MySQL database setup.
 
 
-# Library System Management API
+# Library System Management API 
+### Postman Collections: [library-system-managment.postman_collection.json](library-system-managment.postman_collection.json)
 
 ## Books API
 

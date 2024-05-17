@@ -7,7 +7,7 @@ import com.librarymanagementsystem.exceptionhandlers.borrowrecord.BorrowingRecor
 import com.librarymanagementsystem.exceptionhandlers.book.BookNotFoundException;
 import com.librarymanagementsystem.exceptionhandlers.patron.PatronException;
 import com.librarymanagementsystem.exceptionhandlers.patron.PatronNotFoundException;
-import com.librarymanagementsystem.payload.ErrorResponse;
+import com.librarymanagementsystem.payloads.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -29,7 +29,7 @@ public class ExceptionHandlingController extends ResponseEntityExceptionHandler 
 
     @ExceptionHandler({
             BookNotFoundException.class,
-            PatronNotFoundException.class
+            PatronNotFoundException.class,
     })
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public @ResponseBody ErrorResponse notFoundExceptionHandler(RuntimeException ex) {
@@ -51,11 +51,4 @@ public class ExceptionHandlingController extends ResponseEntityExceptionHandler 
     public @ResponseBody ErrorResponse handleValidationException(RuntimeException ex) {
         return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
     }
-//    @ExceptionHandler( {
-//            AccessDeniedException.class
-//    })
-//    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-//    public @ResponseBody ErrorResponse exceptionHandlerRBAC(AccessDeniedException ex) {
-//        return new ErrorResponse(HttpStatus.UNAUTHORIZED.value(), ex.getMessage());
-//    };
 }

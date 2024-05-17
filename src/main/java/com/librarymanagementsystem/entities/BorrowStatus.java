@@ -1,4 +1,4 @@
-package com.librarymanagementsystem.models;
+package com.librarymanagementsystem.entities;
 
 public enum BorrowStatus {
     BORROWED,

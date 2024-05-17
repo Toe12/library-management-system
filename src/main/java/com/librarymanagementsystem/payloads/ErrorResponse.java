@@ -1,4 +1,4 @@
-package com.librarymanagementsystem.payload;
+package com.librarymanagementsystem.payloads;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

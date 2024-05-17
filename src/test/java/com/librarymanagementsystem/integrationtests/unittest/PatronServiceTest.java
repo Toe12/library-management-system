@@ -2,8 +2,8 @@ package com.librarymanagementsystem.integrationtests.unittest;
 
 import com.librarymanagementsystem.exceptionhandlers.patron.PatronNotFoundException;
 import com.librarymanagementsystem.integrationtests.TestUtils;
-import com.librarymanagementsystem.payload.PatronDto;
-import com.librarymanagementsystem.services.PatronService;
+import com.librarymanagementsystem.payloads.PatronDto;
+import com.librarymanagementsystem.services.patron.PatronService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

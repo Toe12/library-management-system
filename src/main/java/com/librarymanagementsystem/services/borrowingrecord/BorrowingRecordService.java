@@ -1,12 +1,14 @@
-package com.librarymanagementsystem.services;
+package com.librarymanagementsystem.services.borrowingrecord;
 
-import com.librarymanagementsystem.dao.BorrowingRecordDao;
+import com.librarymanagementsystem.daos.BorrowingRecordDao;
 import com.librarymanagementsystem.exceptionhandlers.borrowrecord.BorrowingRecordAlreadyExistsException;
-import com.librarymanagementsystem.models.Book;
-import com.librarymanagementsystem.models.BorrowStatus;
-import com.librarymanagementsystem.models.BorrowingRecord;
-import com.librarymanagementsystem.models.Patron;
-import com.librarymanagementsystem.payload.BorrowingRecordDto;
+import com.librarymanagementsystem.entities.Book;
+import com.librarymanagementsystem.entities.BorrowStatus;
+import com.librarymanagementsystem.entities.BorrowingRecord;
+import com.librarymanagementsystem.entities.Patron;
+import com.librarymanagementsystem.payloads.BorrowingRecordDto;
+import com.librarymanagementsystem.services.book.BookTransactionalService;
+import com.librarymanagementsystem.services.patron.PatronTransactionalService;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

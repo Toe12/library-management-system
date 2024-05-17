@@ -2,9 +2,9 @@ package com.librarymanagementsystem.integrationtests.integrationtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.librarymanagementsystem.integrationtests.TestUtils;
-import com.librarymanagementsystem.models.BorrowStatus;
-import com.librarymanagementsystem.payload.BorrowingRecordDto;
-import com.librarymanagementsystem.services.BorrowingRecordService;
+import com.librarymanagementsystem.entities.BorrowStatus;
+import com.librarymanagementsystem.payloads.BorrowingRecordDto;
+import com.librarymanagementsystem.services.borrowingrecord.BorrowingRecordService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

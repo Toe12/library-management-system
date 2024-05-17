@@ -2,8 +2,8 @@ package com.librarymanagementsystem.integrationtests.integrationtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.librarymanagementsystem.integrationtests.TestUtils;
-import com.librarymanagementsystem.payload.BookDto;
-import com.librarymanagementsystem.services.BookService;
+import com.librarymanagementsystem.payloads.BookDto;
+import com.librarymanagementsystem.services.book.BookService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

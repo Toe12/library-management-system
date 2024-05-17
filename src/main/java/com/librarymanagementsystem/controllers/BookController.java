@@ -1,8 +1,8 @@
 package com.librarymanagementsystem.controllers;
 
 import com.librarymanagementsystem.exceptionhandlers.ValidationException;
-import com.librarymanagementsystem.payload.BookDto;
-import com.librarymanagementsystem.services.BookService;
+import com.librarymanagementsystem.payloads.BookDto;
+import com.librarymanagementsystem.services.book.BookService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;

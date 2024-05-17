@@ -1,7 +1,7 @@
 package com.librarymanagementsystem.controllers;
 
-import com.librarymanagementsystem.payload.PatronDto;
-import com.librarymanagementsystem.services.PatronService;
+import com.librarymanagementsystem.payloads.PatronDto;
+import com.librarymanagementsystem.services.patron.PatronService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;

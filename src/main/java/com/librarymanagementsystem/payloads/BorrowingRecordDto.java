@@ -1,8 +1,7 @@
-package com.librarymanagementsystem.payload;
+package com.librarymanagementsystem.payloads;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.librarymanagementsystem.models.BorrowStatus;
-import jakarta.validation.constraints.NotNull;
+import com.librarymanagementsystem.entities.BorrowStatus;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

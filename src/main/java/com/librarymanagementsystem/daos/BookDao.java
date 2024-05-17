@@ -1,6 +1,6 @@
-package com.librarymanagementsystem.dao;
+package com.librarymanagementsystem.daos;
 
-import com.librarymanagementsystem.models.Book;
+import com.librarymanagementsystem.entities.Book;
 import com.librarymanagementsystem.repositories.BookRepository;
 import org.springframework.stereotype.Component;
 
