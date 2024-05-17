@@ -9,24 +9,22 @@ jobs:
   build:
     name: Checkout & Build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout GH repo
         uses: actions/checkout@v4.1.1
-
+      - name: List directory contents
+        run: ls -R ${{ github.workspace }}
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '21'
           cache: 'maven'
-
       - name: Build with Maven
         run: |
           cd ${{ github.workspace }}/library-management-system
           mvn clean
           mvn package -Dgithub.workspace=${{ github.workspace }}
-
       - name: Run Tests with Maven
         run: |
           cd ${{ github.workspace }}/library-management-system
