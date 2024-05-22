@@ -6,13 +6,14 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class BorrowingRecordDto{
+public class BorrowingRecordDto implements Serializable {
     private UUID borrowingId;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)

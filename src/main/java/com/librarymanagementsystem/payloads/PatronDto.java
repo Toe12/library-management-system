@@ -8,12 +8,13 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class PatronDto {
+public class PatronDto implements Serializable {
     private UUID patronId;
 
     @NotNull(message = "First name should not be null.")
