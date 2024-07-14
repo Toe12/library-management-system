@@ -4,6 +4,7 @@ import com.librarymanagementsystem.payloads.PatronDto;
 import com.librarymanagementsystem.services.patron.PatronService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +29,7 @@ public class PatronController {
     @PutMapping("/update/{patronId}")
     public ResponseEntity<PatronDto> updateBook(@NotNull @PathVariable UUID patronId,
                                                 @Valid @RequestBody PatronDto patronDto) {
-        return ResponseEntity.ok(patronService.updatePatron(patronId, patronDto));
+        return new ResponseEntity<PatronDto>(patronService.updatePatron(patronId, patronDto), HttpStatus.CREATED);
     }
 
     @GetMapping("/retrieveAll")

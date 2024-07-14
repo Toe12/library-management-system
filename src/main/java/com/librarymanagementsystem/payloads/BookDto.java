@@ -6,12 +6,13 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class BookDto {
+public class BookDto implements Serializable {
     private UUID bookId;
 
     @NotNull(message = "Title should not be null.")

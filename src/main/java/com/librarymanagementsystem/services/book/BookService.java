@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,7 @@ public class BookService {
         this.modelMapper = modelMapper;
     }
 
+    @CacheEvict(cacheNames = "getAllBooks", key = "'allBooks'")
     public BookDto addBook(BookDto bookDto) {
         try {
             Book book = modelMapper.map(bookDto, Book.class);
@@ -39,7 +41,15 @@ public class BookService {
         }
     }
 
-    @CachePut(cacheNames = "book", key = "#bookId")
+    @Caching(
+            evict = {
+                    @CacheEvict(cacheNames = "book", key = "#bookId"),
+                    @CacheEvict(cacheNames = "getAllBooks", key = "'allBooks'")
+            },
+            put = {
+                    @CachePut(cacheNames = "book", key = "#bookId")
+            }
+    )
     public BookDto updateBook(UUID bookId, BookDto bookDto) {
         try {
             log.info("Updating book with id {} from db", bookId);
@@ -66,6 +76,7 @@ public class BookService {
         return modelMapper.map(book, BookDto.class);
     }
 
+    @Cacheable(cacheNames = "getAllBooks", key = "'allBooks'")
     public List<BookDto> getAllBooks() {
         List<Book> books = bookDao.retrieveAllBooks();
         return books.stream()
@@ -73,7 +84,15 @@ public class BookService {
                 .toList();
     }
 
-    @CacheEvict(cacheNames = "book", key = "#bookId")
+    @Caching(
+            evict = {
+                    @CacheEvict(cacheNames = "book", key = "#bookId"),
+                    @CacheEvict(cacheNames = "getAllBooks", key = "'allBooks'")
+            },
+            put = {
+                    @CachePut(cacheNames = "book", key = "#bookId")
+            }
+    )
     public String deleteBook(UUID bookId) {
         Book book = findBookById(bookId);
         bookDao.deleteBookById(bookId);
