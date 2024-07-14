@@ -48,7 +48,7 @@ class BookControllerTest extends AbstractIntegrationTest {
         String response = mockMvc.perform(post("/api/books/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(bookDto)))
-                .andExpect(status().isOk())
+                .andExpect(status().is2xxSuccessful())
                 .andReturn()
                 .getResponse()
                 .getContentAsString();

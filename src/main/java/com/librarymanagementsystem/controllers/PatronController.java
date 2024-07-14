@@ -23,13 +23,13 @@ public class PatronController {
 
     @PostMapping("/create")
     public ResponseEntity<PatronDto> createPatron(@Valid @RequestBody PatronDto patronDto) {
-        return ResponseEntity.ok(patronService.addPatron(patronDto));
+        return new ResponseEntity<PatronDto>(patronService.addPatron(patronDto), HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{patronId}")
     public ResponseEntity<PatronDto> updateBook(@NotNull @PathVariable UUID patronId,
                                                 @Valid @RequestBody PatronDto patronDto) {
-        return new ResponseEntity<PatronDto>(patronService.updatePatron(patronId, patronDto), HttpStatus.CREATED);
+        return ResponseEntity.ok(patronService.updatePatron(patronId, patronDto));
     }
 
     @GetMapping("/retrieveAll")

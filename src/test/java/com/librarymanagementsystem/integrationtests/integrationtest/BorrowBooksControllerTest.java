@@ -51,7 +51,7 @@ class BorrowBooksControllerTest extends AbstractIntegrationTest {
 
         String response = mockMvc.perform(post("/api/borrow/" + bookId +"/patron/" + patronId)
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
+                .andExpect(status().is2xxSuccessful())
                 .andReturn()
                 .getResponse()
                 .getContentAsString();

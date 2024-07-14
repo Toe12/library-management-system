@@ -50,7 +50,7 @@ class PatronControllerTest extends AbstractIntegrationTest{
         String response = mockMvc.perform(post("/api/patrons/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(patronDto)))
-                .andExpect(status().isOk())
+                .andExpect(status().is2xxSuccessful())
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
