@@ -5,6 +5,7 @@ import com.librarymanagementsystem.payloads.BookDto;
 import com.librarymanagementsystem.services.book.BookService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ public class BookController {
         if (errors.hasErrors()){
             throw new ValidationException(errors);
         }
-        return ResponseEntity.ok(bookService.addBook(bookDto));
+        return new ResponseEntity<BookDto>(bookService.addBook(bookDto), HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{bookId}")

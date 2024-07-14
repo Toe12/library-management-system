@@ -30,6 +30,5 @@ public class BorrowRecordController {
                                                          @NotNull @PathVariable UUID patronId) {
         return ResponseEntity.ok().body(borrowingRecordService
                 .updateBorrowRecord(patronId, bookId));
-
     }
 }

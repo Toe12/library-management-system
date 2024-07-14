@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,13 +27,22 @@ public class PatronService {
         this.modelMapper = modelMapper;
     }
 
+    @CacheEvict(cacheNames = "getAllPatrons", key = "'allPatrons'")
     public PatronDto addPatron(PatronDto patronDto) {
         Patron patron = modelMapper.map(patronDto, Patron.class);
         Patron savedPatron = patronDao.save(patron);
         return modelMapper.map(savedPatron, PatronDto.class);
     }
 
-    @CachePut(cacheNames = "patron", key = "#patronId")
+    @Caching(
+            evict = {
+                    @CacheEvict(cacheNames = "patron", key = "#patronId"),
+                    @CacheEvict(cacheNames = "getAllPatrons", key = "'allPatrons'")
+            },
+            put = {
+                    @CachePut(cacheNames = "patron", key = "#patronId")
+            }
+    )
     public PatronDto updatePatron(UUID patronId, PatronDto patronDto) {
         log.info("Updating patron with id {}", patronId);
         Patron patronToUpdate = findPatronById(patronId);
@@ -58,6 +68,7 @@ public class PatronService {
         return modelMapper.map(patron, PatronDto.class);
     }
 
+    @Cacheable(cacheNames = "getAllPatrons", key = "'allPatrons'")
     public List<PatronDto> getAllPatrons() {
         List<Patron> patrons = patronDao.findAllPatrons();
         return patrons
@@ -66,7 +77,15 @@ public class PatronService {
                 .toList();
     }
 
-    @CacheEvict(cacheNames = "patron", key = "#patronId")
+    @Caching(
+            evict = {
+                    @CacheEvict(cacheNames = "patron", key = "#patronId"),
+                    @CacheEvict(cacheNames = "getAllPatrons", key = "'allPatrons'")
+            },
+            put = {
+                    @CachePut(cacheNames = "patron", key = "#patronId")
+            }
+    )
     public String deletePatron(UUID patronId) {
         Patron patron = findPatronById(patronId);
         patronDao.deletePatronById(patronId);
