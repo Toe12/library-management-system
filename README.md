@@ -1,7 +1,7 @@
 # Project Setup
 
 ## Database and Redis setup
-- Please refer to [docker_script](docker_script) and[dockerized_mysql_redis_setup.md](docker_script%2Fdockerized_mysql_redis_setup.md) , for MySQL database and redis setup.
+- Please refer to [docker_script](docker_script) and [dockerized_mysql_redis_setup.md](docker_script%2Fdockerized_mysql_redis_setup.md) , for MySQL database and redis setup.
 
 # Library System Management API 
 ### Postman Collections: [library-system-managment.postman_collection.json](library-system-managment.postman_collection.json)
